@@ -1,0 +1,35 @@
+---
+const items = [
+  { id: 'about', label: 'about' },
+  { id: 'skills', label: 'skills' },
+  { id: 'projects', label: 'projects' },
+  { id: 'contact', label: 'contact' },
+];
+---
+
+<header
+  class="sticky top-0 z-20 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur"
+>
+  <nav
+    class="mx-auto flex max-w-4xl items-center justify-between px-6 py-3 text-sm"
+  >
+    <a href="#home" class="text-zinc-300 transition-colors hover:text-cyan-400">
+      <span class="text-emerald-400">$</span>
+      <span class="ml-1">andrei@crystalmind</span>
+    </a>
+    <ul class="hidden gap-6 sm:flex">
+      {
+        items.map((it) => (
+          <li>
+            <a
+              href={`#${it.id}`}
+              class="text-zinc-500 transition-colors hover:text-cyan-400"
+            >
+              {it.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

@@ -6,7 +6,10 @@ interface Props {
   description?: string;
 }
 
-const { title = 'crystalmind.academy', description = 'Personal portfolio' } = Astro.props;
+const {
+  title = 'Andrei D. — DevOps Engineer & Course Creator',
+  description = 'DevOps Engineer and course creator. I build and automate infrastructure, and I teach DevOps and AI tooling to engineers.',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -17,9 +20,19 @@ const { title = 'crystalmind.academy', description = 'Personal portfolio' } = As
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-white text-gray-900 antialiased">
+  <body
+    class="min-h-screen bg-zinc-950 font-mono text-zinc-200 antialiased selection:bg-cyan-400/20 selection:text-cyan-200"
+  >
     <slot />
   </body>
 </html>

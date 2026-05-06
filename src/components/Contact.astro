@@ -1,0 +1,40 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const links = [
+  {
+    label: 'github',
+    url: 'https://github.com/yourusername',
+  },
+  {
+    label: 'linkedin',
+    url: 'https://www.linkedin.com/in/andreidumitrescu/',
+  },
+];
+---
+
+<section
+  id="contact"
+  class="scroll-mt-16 border-b border-zinc-800/80 px-6 py-20"
+>
+  <div class="mx-auto max-w-4xl">
+    <SectionHeading command="cat ~/contact.txt" />
+    <ul class="space-y-3 text-sm sm:text-base">
+      {
+        links.map((l) => (
+          <li class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4">
+            <span class="w-20 shrink-0 text-zinc-500">{l.label}</span>
+            <a
+              href={l.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="break-all text-cyan-400 hover:underline"
+            >
+              {l.url}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

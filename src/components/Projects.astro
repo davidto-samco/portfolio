@@ -1,0 +1,56 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+const projects = [
+  {
+    slug: 'claude-code-course',
+    name: 'Claude Code for DevOps Engineers',
+    description:
+      'Hands-on course on agentic AI workflows for DevOps engineers.',
+    url: 'https://github.com/yourusername/claude-code-course',
+  },
+  {
+    slug: 'self-hosted-portfolio',
+    name: 'Self-Hosted Portfolio',
+    description:
+      "This site. Astro 5, Tailwind v4, BIND DNS, Let's Encrypt on DigitalOcean.",
+    url: 'https://crystalmind.academy',
+  },
+  {
+    slug: 'n8n-workflows',
+    name: 'n8n Automation Workflows',
+    description: 'Production-ready n8n templates for DevOps pipelines.',
+    url: 'https://github.com/yourusername/n8n-workflows',
+  },
+];
+---
+
+<section
+  id="projects"
+  class="scroll-mt-16 border-b border-zinc-800/80 px-6 py-20"
+>
+  <div class="mx-auto max-w-4xl">
+    <SectionHeading command="ls -la ~/projects/" />
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        projects.map((p) => (
+          <a
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block rounded border border-zinc-800 bg-zinc-900/40 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-cyan-400/20"
+          >
+            <div class="mb-3 text-xs text-zinc-500">~/projects/{p.slug}</div>
+            <div class="mb-2 flex items-baseline justify-between gap-3">
+              <h3 class="text-base font-semibold text-zinc-100">{p.name}</h3>
+              <span class="text-cyan-400 transition-transform group-hover:translate-x-0.5">
+                →
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed text-zinc-400">{p.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
